@@ -73,3 +73,13 @@ pd.options.display.float_format = '{:,.2f}'.format
 
 # now the numbers will be printed in the specified format(, after 3 digits and 2 places after decimal)
 clean_df.groupby('Group').mean()
+
+# #####################
+# FEW OTHER COMMANDS #
+# ####################
+
+#  Read the csv file and give the column names
+df = pd.read_csv('QueryResults.csv',names=['DATE', 'TAG','POSTS'], header=0)
+
+# Find the total sum of posts by category ('TAG' in this case)
+total_by_tag = df.groupby('TAG').sum()
